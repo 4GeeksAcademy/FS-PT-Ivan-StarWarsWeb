@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "/workspaces/FS-PT-Ivan-StarWarsWeb/src/styles/navBar.css"
 
 export const Navbar = () => {
 	const [showSearch, setShowSearch] = useState(false);
@@ -8,7 +9,7 @@ export const Navbar = () => {
 	};
 	return (
 		<nav class="navbar bg-dark navbar-dark navbar-expand-lg bg-body-tertiary border-bottom border-body">
-			<div className="container-fluid">
+			<div className="container-fluid mb-0" style={{border: "none" , padding:"none"}}>
 			<nav id="first-navbar-local"class="navbar bg-body-tertiary">
 					<form class="container-fluid justify-content-start">
 						<button
@@ -90,5 +91,6 @@ export const Navbar = () => {
 				</form>
 			</div>
 		</nav>
+
 	);
 };

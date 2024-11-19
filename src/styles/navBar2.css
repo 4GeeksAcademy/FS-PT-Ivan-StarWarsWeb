@@ -1,0 +1,39 @@
+
+.navbar .dropdown-menu {
+    background-color: black;
+}
+
+.navbar .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+}
+
+
+.navbar .dropdown-toggle::after {
+    display: none;
+}
+
+.nav-link {
+    color: rgb(202, 202, 202); 
+}
+
+.dropdown-menu .dropdown-item {
+    color: rgb(210, 210, 210);
+    background-color: #000;
+}
+
+.dropdown-item:hover {
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 2);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.navbar-dark.bg-dark {
+    background-color: #000 !important; /* Negro puro */
+}
+
+.navbar .dropdown:hover .nav-link {
+    color: #f8f9fa; /* Un blanco más brillante */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.9); /* Efecto de iluminación suave */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Transiciones suaves */
+}
