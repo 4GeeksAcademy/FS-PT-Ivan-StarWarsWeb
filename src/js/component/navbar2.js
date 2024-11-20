@@ -15,7 +15,6 @@ export const NavBar2 = () => {
                             <ul className="dropdown-menu">
                                 <li><a className="dropdown-item" href="#">Notices</a></li>
                                 <li><a className="dropdown-item" href="#">Games</a></li>
-                                <li><a className="dropdown-item" href="#"></a></li>
                             </ul>
                         </div>
 
@@ -72,9 +71,16 @@ export const NavBar2 = () => {
                                 GAMES + INTERACTIVE
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href="#">Star Wars Outlaws </a></li>
+                                <li><a className="dropdown-item" href="#">Star Wars: Bounty Hunter</a></li>
+                                <li><a className="dropdown-item" href="#">LEGO Star Wars II: The Original Trilogy</a></li>
+                                <li><a className="dropdown-item" href="#">LEGO Star Wars: The Skywalker Saga</a></li>
+                                <li><a className="dropdown-item" href="#">Star Wars: Squadrons</a></li>
+                                <li><a className="dropdown-item" href="#">Star Wars Episode I: Racer</a></li>
+                                <li><a className="dropdown-item" href="#">Star Wars Jedi Knight: Jedi Academy </a></li>
+                                <li><a className="dropdown-item" href="#">Star Wars Jedi: Fallen Order</a></li>
+                                <li><a className="dropdown-item" href="#">Star Wars Battlefront II</a></li>
+
                             </ul>
                         </div>
 
@@ -83,9 +89,8 @@ export const NavBar2 = () => {
                                 DATABANK
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href="#">All Databank</a></li>
+                                <li><a className="dropdown-item" href="#">Eras</a></li>
                             </ul>
                         </div>
 
@@ -94,9 +99,7 @@ export const NavBar2 = () => {
                                 DISNEY+
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
+                                <li><a className="dropdown-item" href="#">Explore</a></li>
                             </ul>
                         </div>
                     </div>
