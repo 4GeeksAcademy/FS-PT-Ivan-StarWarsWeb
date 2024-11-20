@@ -12,7 +12,6 @@ export const Navbar = () => {
         <nav className="navbar bg-dark navbar-dark navbar-expand-lg bg-body-tertiary border-bottom border-body">
             <div className="container-fluid d-flex align-items-center justify-content-between">
                 
-                {/* Redes sociales alineadas a la izquierda */}
                 <nav id="first-navbar-local" className="navbar navbar-dark bg-body-tertiary">
                     <form className="container-fluid justify-content-start" style={{width: "200px"}}>
                         <button className="btn" type="button" style={{ color: "white" }} onClick={() => window.open("https://www.tiktok.com/@starwars")}>
@@ -39,7 +38,6 @@ export const Navbar = () => {
                     </form>
                 </nav>
 
-                {/* Logo de Star Wars centrado */}
                 <div className="d-flex justify-content-center align-items-center w-100">
                     <a className="navbar-brand mx-auto text-center" href="#">
                         <img
@@ -47,14 +45,14 @@ export const Navbar = () => {
                             alt="Star Wars"
                             className="img-fluid"
                             style={{
-                                maxWidth: "200px",  // Ajusta el tamaño del logo
+                                maxWidth: "200px",
                                 height: "auto",
                             }}
                         />
                     </a>
                 </div>
 
-                {/* Barra de búsqueda alineada a la derecha */}
+               
                 <form className="d-flex align-items-center" role="search" style={{ maxWidth: '250px', width: '100%' }}>
                     
                         <input
