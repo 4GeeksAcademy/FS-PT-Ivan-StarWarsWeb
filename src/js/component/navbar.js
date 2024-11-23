@@ -39,7 +39,7 @@ export const Navbar = () => {
                 </nav>
 
                 <div className="d-flex justify-content-center align-items-center w-100">
-                    <a className="navbar-brand mx-auto text-center" href="#">
+                    <a className="navbar-brand mx-auto text-center" href="/">
                         <img
                             src="https://logos-download.com/wp-content/uploads/2016/09/Star_Wars_logo_black.png"
                             alt="Star Wars"

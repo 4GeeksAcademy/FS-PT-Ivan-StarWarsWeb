@@ -32,18 +32,10 @@ export const NavBar2 = () => {
                                 FILMS
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Star Wars: Episodio I – La amenaza fantasma</a></li>
-                                <li><a className="dropdown-item" href="#">Star Wars: Episodio II – El ataque de los clones</a></li>
-                                <li><a className="dropdown-item" href="#"> Star Wars: Episodio III – La venganza de los Sith</a></li>
-                                <li><a className="dropdown-item" href="#"> Star Wars: Episodio IV – La guerra de las galaxias</a></li>
-                                <li><a className="dropdown-item" href="#"> Star Wars: Episodio V – El imperio contraataca</a></li>
-                                <li><a className="dropdown-item" href="#"> Star Wars: Episodio VI – El retorno del Jedi</a></li>
-                                <li><a className="dropdown-item" href="#"> Star Wars: Episodio VII – El despertar de la fuerza</a></li>
-                                <li><a className="dropdown-item" href="#"> Star Wars: Episodio VIII – Los últimos Jedi</a></li>
-                                <li><a className="dropdown-item" href="#"> Star Wars: Episodio IX – El ascenso de Skywalker</a></li>
-                                <li><a className="dropdown-item" href="#"> Star Wars: Las guerras clon</a></li>
-                                <li><a className="dropdown-item" href="#"> Rogue One: Una historia de Star Wars</a></li>
-                                <li><a className="dropdown-item" href="#"> Han Solo: Una historia de Star Wars</a></li>
+                                <li><a className="dropdown-item" href="#">Films</a></li>
+                                <li><a className="dropdown-item" href="#">Starships</a></li>
+                                <li><a className="dropdown-item" href="planets-section">Planets</a></li>
+                                <li><a className="dropdown-item" href="#">Species</a></li>
 
                             </ul>
                         </div>
@@ -53,8 +45,8 @@ export const NavBar2 = () => {
                                 SERIE
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="#">Star Wars: La Remesa Mala</a></li>
-                                <li><a className="dropdown-item" href="#">Obi Wan Kenobi</a></li>
+                                <li><a className="dropdown-item" href="character-section">Characters</a></li>
+                                <li><a className="dropdown-item" href="#">Vehicles</a></li>
                                 <li><a className="dropdown-item" href="#">Star Wars Rebels</a></li>
                                 <li><a className="dropdown-item" href="#">Tales of Jedi</a></li>
                                 <li><a className="dropdown-item" href="#">Andor</a></li>
@@ -90,7 +82,7 @@ export const NavBar2 = () => {
                             </a>
                             <ul className="dropdown-menu">
                                 <li><a className="dropdown-item" href="#">All Databank</a></li>
-                                <li><a className="dropdown-item" href="#">Eras</a></li>
+                                <li><a className="dropdown-item" href="#">Favorites</a></li>
                             </ul>
                         </div>
 
