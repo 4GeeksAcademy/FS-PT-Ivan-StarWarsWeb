@@ -4,7 +4,7 @@ export const CardPlanets = (props) => {
 
 
     return (
-        <div className='col-sm-6 col-md-4 col-lg-3'>
+        <div className='col-sm-6 col-md-4 col-lg-3 mb-3'>
             <div className='card'>
                 <figure>
                     <img className="card-img-top" src={props.img} alt={props.name} />

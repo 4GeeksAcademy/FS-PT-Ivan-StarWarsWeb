@@ -34,7 +34,7 @@ export const NavBar2 = () => {
                             <ul className="dropdown-menu">
                                 <li><a className="dropdown-item" href="#">Films</a></li>
                                 <li><a className="dropdown-item" href="#">Starships</a></li>
-                                <li><a className="dropdown-item" href="planets-section">Planets</a></li>
+                                <li><a className="dropdown-item" href="planets">Planets</a></li>
                                 <li><a className="dropdown-item" href="#">Species</a></li>
 
                             </ul>
@@ -45,16 +45,8 @@ export const NavBar2 = () => {
                                 SERIE
                             </a>
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item" href="character-section">Characters</a></li>
-                                <li><a className="dropdown-item" href="#">Vehicles</a></li>
-                                <li><a className="dropdown-item" href="#">Star Wars Rebels</a></li>
-                                <li><a className="dropdown-item" href="#">Tales of Jedi</a></li>
-                                <li><a className="dropdown-item" href="#">Andor</a></li>
-                                <li><a className="dropdown-item" href="#">Skeleton Crew</a></li>
-                                <li><a className="dropdown-item" href="#">The Mandalorian</a></li>
-                                <li><a className="dropdown-item" href="#">El Libro de Boba Fett</a></li>
-                                <li><a className="dropdown-item" href="#">Ahsoka</a></li>
-                                <li><a className="dropdown-item" href="#">Star Wars Resistance</a></li>
+                                <li><a className="dropdown-item" href="character">Characters</a></li>
+                                <li><a className="dropdown-item" href="vehicles">Vehicles</a></li>
                             </ul>
                         </div>
 

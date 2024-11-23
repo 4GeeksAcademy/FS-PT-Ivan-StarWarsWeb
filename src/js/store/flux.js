@@ -1,3 +1,5 @@
+import { IgnorePlugin } from "webpack";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -28,6 +30,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				} catch (error){
 					console.error(error);
+				}
+			},
+
+			getVehicles: async () => {
+				try{
+					const resp = await fetch(getStore().url+'/vehicles')
+					if(!resp.ok) throw new Error('Error fetching vehicles');
+					const data = await resp.json();
+					console.log('data--->', data.results)
+					setStore({vehicles: data.results})
+					
+				} catch(error) {
+					console.error(error)
 				}
 			}
 		
