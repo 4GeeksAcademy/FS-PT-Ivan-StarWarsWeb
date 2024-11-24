@@ -10,8 +10,10 @@ import { Footer } from "./component/footer";
 import { NavBar2 } from "./component/navbar2";
 
 import { ViewCharacters } from "./sections/viewCharacters.jsx";
-import {ViewPlanets} from "./sections/viewPlanets.jsx"
-import {ViewVehicles} from "./sections/viewVehicles.jsx"
+import { ViewPlanets } from "./sections/viewPlanets.jsx"
+import { ViewVehicles } from "./sections/viewVehicles.jsx"
+import { ViewFilms } from "./sections/viewFilms.jsx";
+import { ViewSpecies } from "./sections/viewSpecies.jsx";
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -30,6 +32,8 @@ const Layout = () => {
 						<Route path="/character" element={<ViewCharacters />}/>
 						<Route path="/planets" element={<ViewPlanets />}/>
 						<Route path="/vehicles" element={<ViewVehicles />}/>
+						<Route path="/films" element={<ViewFilms />}/>
+						<Route path="/species" element={<ViewSpecies/>}/>
 					</Routes>
 					<Footer />
 				</ScrollToTop>
