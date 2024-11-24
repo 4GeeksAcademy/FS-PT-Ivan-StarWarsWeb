@@ -14,9 +14,9 @@ export const Vehicles = () => {
     return (
         <div className="text-center mt-5" >
             <section ref={sectionRef}>
-                <h2 className="title">Planets</h2>
+                <h2 className="title">Vehicles</h2>
                 <div className="row">   
-                    {store.planets?.map(el => (
+                    {store.vehicles?.map(el => (
                         <CardVehicles key={el.uid} 
                         name={el.name}
                         cargo_capaccity={el.cargo_capaccity}
@@ -33,7 +33,7 @@ export const Vehicles = () => {
                         pilots={el.pilots}
                         passenger={el.passenger}
                         uid={el.uid} 
-                        img={``} />
+                        img={`https://starwars-visualguide.com/assets/img/vehicles/${el.uid}.jpg`} />
                     ))}
                 </div>
             </section>
