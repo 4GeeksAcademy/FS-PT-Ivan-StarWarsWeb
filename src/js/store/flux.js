@@ -80,6 +80,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return false; // Indica que hubo un error
 				}
 			},
+
+			getTwo: async (uid) => {
+                try {
+					const resp = await fetch(getStore().url + "/planets/" + uid);
+					if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
+					const data = await resp.json();
+					setStore({ planets: data.result });
+					return true; // Indica que la carga fue exitosa
+				} catch (error) {
+					console.error('Error en getOne:', error);
+					setStore({ error: error.message });
+					return false; // Indica que hubo un error
+				}
+            },
+
 		}
 
 	};

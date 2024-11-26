@@ -1,17 +1,14 @@
-import React, { useEffect, useContext, useState } from "react";
-import { Context } from "../store/appContext";
+import React, { useEffect, useContext } from "react";
+import { Context } from "../../store/appContext";
 import { useParams } from "react-router";
 
 export const Details = () => {
     const { store, actions } = useContext(Context);
     const params = useParams();
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
-            setLoading(true);
             await actions.getOne(params.uid);
-            setLoading(false);
         };
         fetchData();
     }, [params.uid, actions]);
