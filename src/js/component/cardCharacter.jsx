@@ -5,7 +5,7 @@ export const CardCharacter = (props) => {
     const navigate = useNavigate();
 
     const handleLearnMore = () => {
-        navigate(`/details/character/${props.id}`); // Usa props.id para navegar a los detalles del personaje
+        navigate(`/details/character/${props.uid}`); 
     };
 
     return (
