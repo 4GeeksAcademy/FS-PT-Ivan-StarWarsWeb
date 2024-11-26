@@ -67,6 +67,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error('Error en getSpecies:', error);
 				}
 			},
+			//Character
 			getOne: async (uid) => {
 				try {
 					const resp = await fetch(getStore().url + "/people/" + uid);
@@ -80,7 +81,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return false; // Indica que hubo un error
 				}
 			},
-
+			//Planets
 			getTwo: async (uid) => {
 				try {
 					console.log("Fetching character with uid:", uid);
@@ -95,6 +96,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					return false; // Indica que hubo un error
 				}
 			},
+			//Vehicles
+			getThree: async (uid) => {
+				try {
+					const resp = await fetch(getStore().url + "/vehicles/" + uid); // Reemplazar con el endpoint correcto
+					if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
+					const data = await resp.json();
+					setStore({ vehicles: data.results }); // Almacenar el vehículo específico en el store
+					return true; // Indica que la carga fue exitosa
+				} catch (error) {
+					console.error('Error en getThree:', error);
+					setStore({ error: error.message });
+					return false; // Indica que hubo un error
+				}
+			},
+
 
 		}
 
