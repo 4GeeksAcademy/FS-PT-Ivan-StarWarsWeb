@@ -1,35 +1,36 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { Context } from "../store/appContext";
 import { useParams } from "react-router";
-
-import '../../styles/navBar2.css';
 
 export const Details = () => {
     const { store, actions } = useContext(Context);
     const params = useParams();
-    
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        actions.getOne(params.uid); // Llama a getOne con el uid del personaje
-    }, [params.uid]); // Asegúrate de pasar params.uid como dependencia
+        const fetchData = async () => {
+            setLoading(true);
+            await actions.getOne(params.uid);
+            setLoading(false);
+        };
+        fetchData();
+    }, [params.uid, actions]);
 
     return (
-        <div className="container">
-            <div className="card">
-                <div className="d-flex">
-                    <figure>
-                        <img src="" alt="" />
-                        <figcaption>
-                            {store.character?.properties.name}
-                        </figcaption>
-                    </figure>
-
-                    <div>
-                        <p>eye color: {store.character?.properties.eye_color}</p>
-                        <p>hair color: {store.character?.properties.hair_color}</p>
-                        <p>height: {store.character?.properties.height}</p>
-                        <p>mass: {store.character?.properties.mass}</p>
-                        <p>skin color: {store.character?.properties.skin_color}</p>
+        <div className="container my-5">
+            <div className="card shadow-lg">
+                <div className="row no-gutters">
+                    <div className="col-md-8">
+                        <div className="card-body">
+                            <h2 className="card-title mb-4"><strong>{store.character?.properties?.name}</strong></h2>
+                            <div className="details-item">
+                                <p><strong>Eye color:</strong> <span className="text-muted">{store.character?.properties?.eye_color}</span></p>
+                                <p><strong>Hair color:</strong> <span className="text-muted">{store.character?.properties?.hair_color}</span></p>
+                                <p><strong>Height:</strong> <span className="text-muted">{store.character?.properties?.height}</span></p>
+                                <p><strong>Mass:</strong> <span className="text-muted">{store.character?.properties?.mass}</span></p>
+                                <p><strong>Skin color:</strong> <span className="text-muted">{store.character?.properties?.skin_color}</span></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

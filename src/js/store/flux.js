@@ -67,16 +67,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					console.error('Error en getSpecies:', error);
 				}
 			},
-			getOne: async (uid) => { 
-                try {
-                    const resp = await fetch(`${getStore().url}/people/${uid}`);
-                    if (!resp.ok) throw new Error('Error fetching character details');
-                    const data = await resp.json();
-                    setStore({ character: data.result }); // Almacena los detalles del personaje
-                } catch (error) {
-                    console.error('Error en getOne:', error);
-                }
-            },
+			getOne: async (uid) => {
+				try {
+					const resp = await fetch(getStore().url + "/people/" + uid);
+					if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
+					const data = await resp.json();
+					setStore({ character: data.result });
+					return true; // Indica que la carga fue exitosa
+				} catch (error) {
+					console.error('Error en getOne:', error);
+					setStore({ error: error.message });
+					return false; // Indica que hubo un error
+				}
+			},
 		}
 
 	};
