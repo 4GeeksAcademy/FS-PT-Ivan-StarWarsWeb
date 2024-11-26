@@ -16,6 +16,7 @@ import { ViewFilms } from "./sections/viewFilms.jsx";
 import { ViewSpecies } from "./sections/viewSpecies.jsx";
 import { Details } from "./views/detailsSection/details.jsx";
 import { DetailsPlanets } from "./views/detailsSection/detailsPlanets.jsx"
+import { DetailsVehicles } from "./views/detailsSection/detailsVehicles.jsx";
 
 const Layout = () => {
 	const basename = process.env.BASENAME || "";
@@ -30,6 +31,8 @@ const Layout = () => {
 						<Route path="/" element={<Home />} />
 						<Route path="/details/:type/:uid" element={<Details />} />
 						<Route path="detailsPlanets/:type/:uid" element={<DetailsPlanets/>} />
+						<Route path="detailsVehicles/:type/:uid" element={<DetailsVehicles/>} />
+
 						<Route path="*" element={<h1>Not found!</h1>} />
 						<Route path="/character" element={<ViewCharacters />} />
 						<Route path="/planets" element={<ViewPlanets />} />
