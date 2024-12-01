@@ -9,8 +9,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			vehicles: [],
 			species: [],
+			favourites: [],
 		},
 		actions: {
+			getFavouriteAndRemove: async (fav) => {
+				if (!fav || !fav.uid || !fav.type) {
+					console.error("Invalid favorite object", fav);
+					return;
+				}
+			
+				const store = getStore();
+				const isFavourite = store.favourites.some(el => el.uid === fav.uid && el.type === fav.type);
+				
+				if (isFavourite) {
+					setStore({
+						favourites: store.favourites.filter(el => !(el.uid === fav.uid && el.type === fav.type))
+					});
+				} else {
+					setStore({ favourites: [...store.favourites, fav] });
+				}
+			},
 			getCharacter: async () => {
 				try {
 					const resp = await fetch(getStore().url + '/people');
@@ -70,21 +88,31 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//Character
 			getOne: async (uid) => {
 				try {
-					const resp = await fetch(getStore().url + "/people/" + uid);
+					console.log("UID recibido:", uid);  // Verificar si UID es válido
+					if (!uid) {
+						console.error('UID no proporcionado o es inválido');
+						return false;
+					}
+			
+					const url = getStore().url + "/people/" + uid;
+					console.log("URL generada:", url);  // Verificar la URL generada
+			
+					const resp = await fetch(url);
 					if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
+			
 					const data = await resp.json();
 					setStore({ character: data.result });
-					return true; // Indica que la carga fue exitosa
+					return true;
 				} catch (error) {
 					console.error('Error en getOne:', error);
 					setStore({ error: error.message });
-					return false; // Indica que hubo un error
+					return false;
 				}
 			},
 			//Planets
 			getTwo: async (uid) => {
 				try {
-					console.log("Fetching character with uid:", uid);
+					console.log("Fetching character with uid:", uid);         
 					const resp = await fetch(getStore().url + "/planets/" + uid);
 					if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
 					const data = await resp.json();

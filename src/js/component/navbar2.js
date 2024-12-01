@@ -35,7 +35,7 @@ export const NavBar2 = () => {
                                 DATABANK
                             </a>
                             <ul className="dropdown-menu">
-                                <li><Link className="dropdown-item" to="#">Favorites</Link></li>
+                                <li><Link className="dropdown-item" to="/favourites">Favorites</Link></li>
                             </ul>
                         </div>
 
