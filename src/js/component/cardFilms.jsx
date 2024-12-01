@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { Context } from "../store/appContext";
+
 
 export const CardFilms = (props) => {
-    
+    const { actions } = useContext(Context);
+    const handleFavourite = () => {
+        const fav = { 
+            uid: props.uid,
+            type: "films", 
+            ...props 
+        };
+        actions.getFavouriteAndRemove(fav);
+    };
     return (
         <div className='col-sm-6 col-md-4 col-lg-3 mb-3'>
             <div className='card'>
@@ -12,7 +23,7 @@ export const CardFilms = (props) => {
                 <figure>
                     <div className="d-flex">
                         <button className="btn btn-primary">Learn more</button>
-                        <button className="btn btn-outline">Add your team <i class="fa-brands fa-old-republic"></i></button>
+                        <button className="btn btn-outline" onClick={handleFavourite}>Add your team <i class="fa-brands fa-old-republic"></i></button>
                     </div>
                 </figure> 
                 </figure>
