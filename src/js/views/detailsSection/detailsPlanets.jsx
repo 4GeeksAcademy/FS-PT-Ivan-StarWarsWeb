@@ -11,7 +11,7 @@ export const DetailsPlanets = () => {
             await actions.getTwo(params.uid);
         };
         fetchData();
-    }, [params.uid, actions]);
+    }, []);
 
     return (
         <div className="container my-5">
@@ -19,13 +19,13 @@ export const DetailsPlanets = () => {
                 <div className="row no-gutters">
                     <div className="col-md-8">
                         <div className="card-body">
-                            <h2 className="card-title mb-4"><strong>{store.planets?.properties?.name}</strong></h2>
+                            <h2 className="card-title mb-4"><strong>{store.planet?.properties?.name}</strong></h2>
                             <div className="details-item">
-                                <p><strong>Gravity:</strong> <span className="text-muted">{store.planets?.properties?.gravity}</span></p>
-                                <p><strong>Created:</strong> <span className="text-muted">{store.planets?.properties?.created}</span></p>
-                                <p><strong>Population:</strong> <span className="text-muted">{store.planets?.properties?.population}</span></p>
-                                <p><strong>Terrain:</strong> <span className="text-muted">{store.planets?.properties?.terrain}</span></p>
-                                <p><strong>Films:</strong> <span className="text-muted">{store.planets?.properties?.films}</span></p>
+                                <p><strong>Gravity:</strong> <span className="text-muted">{store.planet?.properties?.gravity}</span></p>
+                                <p><strong>Created:</strong> <span className="text-muted">{store.planet?.properties?.created}</span></p>
+                                <p><strong>Population:</strong> <span className="text-muted">{store.planet?.properties?.population}</span></p>
+                                <p><strong>Terrain:</strong> <span className="text-muted">{store.planet?.properties?.terrain}</span></p>
+                                <p><strong>Films:</strong> <span className="text-muted">{store.planet?.properties?.films}</span></p>
                             </div>
                         </div>
                     </div>
