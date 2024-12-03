@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { Context } from "../store/appContext";
 import { CardFilms } from "../component/cardFilms.jsx";
 
@@ -9,6 +9,9 @@ export const Films = () => {
     const { store,actions } = useContext(Context);
     const sectionRef = useRef(null);
 
+    useEffect(()=>{
+        actions.getFilms()
+    },[])
     console.log("Datos en store.films:", store.films); 
 
 

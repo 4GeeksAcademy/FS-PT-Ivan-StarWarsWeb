@@ -17,8 +17,8 @@ export const CardFilms = (props) => {
         <div className='col-sm-6 col-md-4 col-lg-3 mb-3'>
             <div className='card'>
                 <figure>
-                    <img className="card-img-top" src={props.img} alt={props.name} />
-                    <figcaption>{props.name}</figcaption>
+                    <img className="card-img-top" src={props.img} alt={props.title} />
+                    <figcaption>{props.title}</figcaption>
                     
                 <figure>
                     <div className="d-flex">
