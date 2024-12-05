@@ -40,6 +40,7 @@ const injectContext = PassedComponent => {
 			state.actions.getTwo();
 			state.actions.getThree();
 			state.actions.getFavouriteAndRemove();
+			state.actions.getFour();
 		}, []);
 
 

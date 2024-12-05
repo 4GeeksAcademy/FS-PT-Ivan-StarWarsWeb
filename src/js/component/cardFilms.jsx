@@ -4,7 +4,13 @@ import { Context } from "../store/appContext";
 
 
 export const CardFilms = (props) => {
+    const navigate = useNavigate();
     const { actions } = useContext(Context);
+
+    const handleLearnMore = () => {
+        navigate(`/detailsFilms/films/${props.uid}`);
+    };
+
     const handleFavourite = () => {
         const fav = { 
             uid: props.uid,
@@ -22,7 +28,7 @@ export const CardFilms = (props) => {
                     
                 <figure>
                     <div className="d-flex">
-                        <button className="btn btn-primary">Learn more</button>
+                        <button className="btn btn-primary" onClick={handleLearnMore}>Learn more</button>
                         <button className="btn btn-outline" onClick={handleFavourite}>Add your team <i class="fa-brands fa-old-republic"></i></button>
                     </div>
                 </figure> 
