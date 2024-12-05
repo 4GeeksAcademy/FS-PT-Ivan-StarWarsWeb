@@ -7,7 +7,7 @@ export const CardVehicles = (props) => {
     const { actions } = useContext(Context);
 
     const handleLearnMore = () => {
-        navigate(`/details/vehicles/${props.uid}`);  // Redirige a la página de detalles
+        navigate(`/detailsVehicles/vehicles/${props.uid}`);  // Redirige a la página de detalles
     };
 
     const handleFavourite = () => {

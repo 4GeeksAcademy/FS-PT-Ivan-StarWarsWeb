@@ -17,6 +17,7 @@ import { ViewSpecies } from "./sections/viewSpecies.jsx";
 import { Details } from "./views/detailsSection/details.jsx";
 import { DetailsPlanets } from "./views/detailsSection/detailsPlanets.jsx"
 import { DetailsVehicles } from "./views/detailsSection/detailsVehicles.jsx";
+import { DetailsFilms } from "./views/detailsSection/detailsFilms.jsx";
 import { AddTeam } from "./sections/addTeam.jsx";
 
 
@@ -32,6 +33,7 @@ const Layout = () => {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/details/:type/:uid" element={<Details />} />
+						<Route path="/detailsFilms/:type/uid" element={<DetailsFilms/>}/>
 						<Route path="/detailsPlanets/planets/:uid" element={<DetailsPlanets />} />
 						<Route path="detailsVehicles/:type/:uid" element={<DetailsVehicles/>} />
 						<Route path="/favourites" element={<AddTeam />} />
