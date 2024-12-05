@@ -11,6 +11,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			species: [],
 			favourites: [],
 			planet: {},
+			film: {},
+			vehicle: {},
+			specie: {},
+			
 		},
 		actions: {
 			getFavouriteAndRemove: async (fav) => {
@@ -81,24 +85,21 @@ const getState = ({ getStore, getActions, setStore }) => {
 					const resp = await fetch(getStore().url + '/species');
 					if (!resp.ok) throw new Error('Error fetching films');
 					const data = await resp.json();
-					//console.log('Datos obtenidos de la API:', data);
+					
 					setStore({ species: data.results });
 				} catch (error) {
-					//console.error('Error en getSpecies:', error);
+				
 				}
 			},
 			//Character
 			getOne: async (uid) => {
 				try {
-					//console.log("UID recibido:", uid);  // Verificar si UID es válido
 					if (!uid) {
-						//console.error('UID no proporcionado o es inválido');
+						
 						return false;
 					}
-			
 					const url = getStore().url + "/people/" + uid;
-					//console.log("URL generada:", url);  // Verificar la URL generada
-			
+				
 					const resp = await fetch(url);
 					if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
 			
@@ -106,7 +107,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					setStore({ character: data.result });
 					return true;
 				} catch (error) {
-					//console.error('Error en getOne:', error);
 					setStore({ error: error.message });
 					return false;
 				}
@@ -114,44 +114,59 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//Planets
 			getTwo: async (uid) => {
 				try {
-					//console.log("Fetching character with uid:", uid);         
 					const resp = await fetch(getStore().url + "/planets/" + uid);
 					if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
 					const data = await resp.json();
 					setStore({ planet: data.result });
-					return true; // Indica que la carga fue exitosa
+					return true; 
 				} catch (error) {
-					//console.error('Error en getOne:', error);
+					
 					setStore({ error: error.message });
-					return false; // Indica que hubo un error
+					return false; 
 				}
 			},
 			//Vehicles
 			getThree: async (uid) => {
 				try {
-					const resp = await fetch(getStore().url + "/vehicles/" + uid); // Reemplazar con el endpoint correcto
+					const resp = await fetch(getStore().url + "/vehicles/" + uid);
 					if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
 					const data = await resp.json();
-					setStore({ vehicles: data.results }); // Almacenar el vehículo específico en el store
-					return true; // Indica que la carga fue exitosa
+					console.log('Datos del vehiculo',data.result)
+					setStore({ vehicle: data.result }); 
+					return true; 
 				} catch (error) {
 					console.error('Error en getThree:', error);
 					setStore({ error: error.message });
-					return false; // Indica que hubo un error
+					return false;
 				}
 			},
 
 			//Films
 			getFour: async (uid) => {
-				try{
+				
+				try {
 					const resp = await fetch(getStore().url + "/films/" + uid);
-					if(!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
+					if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
 					const data = await resp.json();
-					setStore({ description: data.result});
+					
+					setStore({ film: data.result });
 					return true;
+				} catch (error) {
+					console.error('Error fetching film', error);
+				}
+			},
 
-				}catch(error) {
-					console.error('Error fetching four', error)
+			//Species
+			getFive: async (uid) => {
+				
+				try {
+					const resp = await fetch(getStore().url + "/species/" + uid);
+					if (!resp.ok) throw new Error(`HTTP error! status: ${resp.status}`);
+					const data = await resp.json();
+					setStore({ specie: data.result });
+					return true;
+				} catch (error) {
+					console.error('Error fetching species', error);
 				}
 			}
 

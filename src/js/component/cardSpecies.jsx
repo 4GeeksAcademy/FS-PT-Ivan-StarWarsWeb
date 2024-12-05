@@ -5,7 +5,12 @@ import { Context } from "../store/appContext";
 
 export const CardSpecies = (props) => {
 
+    const navigate = useNavigate();
     const { actions } = useContext(Context);
+    
+    const handleLearnMore = () => {
+        navigate(`/detailsSpecies/species/${props.uid}`); 
+    };
     const handleFavourite = () => {
         const fav = { 
             uid: props.uid,
@@ -23,7 +28,7 @@ export const CardSpecies = (props) => {
                     <figcaption>{props.name}</figcaption>
                 <figure>
                     <div className="d-flex">
-                        <button className="btn btn-primary">Learn more</button>
+                        <button className="btn btn-primary" onClick={handleLearnMore}>Learn more</button>
                         <button className="btn btn-outline" onClick={handleFavourite}>Add your team <i className="fa-brands fa-old-republic"></i></button>
                     </div>
                 </figure> 
