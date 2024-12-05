@@ -18,6 +18,7 @@ import { Details } from "./views/detailsSection/details.jsx";
 import { DetailsPlanets } from "./views/detailsSection/detailsPlanets.jsx"
 import { DetailsVehicles } from "./views/detailsSection/detailsVehicles.jsx";
 import { DetailsFilms } from "./views/detailsSection/detailsFilms.jsx";
+import { DetailsSpecies } from "./views/detailsSection/detailsSpecies.jsx";
 import { AddTeam } from "./sections/addTeam.jsx";
 
 
@@ -33,8 +34,9 @@ const Layout = () => {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/details/:type/:uid" element={<Details />} />
-						<Route path="/detailsFilms/:type/uid" element={<DetailsFilms/>}/>
-						<Route path="/detailsPlanets/planets/:uid" element={<DetailsPlanets />} />
+						<Route path="/detailsFilms/:type/:uid" element={<DetailsFilms/>}/>
+						<Route path="/detailsPlanets/:type/:uid" element={<DetailsPlanets />} />
+						<Route path="/detailsSpecies/:type/:uid" element={<DetailsSpecies />} />
 						<Route path="detailsVehicles/:type/:uid" element={<DetailsVehicles/>} />
 						<Route path="/favourites" element={<AddTeam />} />
 						<Route path="*" element={<h1>Not found!</h1>} />

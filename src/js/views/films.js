@@ -12,7 +12,6 @@ export const Films = () => {
     useEffect(()=>{
         actions.getFilms()
     },[])
-    console.log("Datos en store.films:", store.films); 
 
 
     return (
